@@ -15,7 +15,7 @@ class CreateReviewsTable extends Migration
     {
         Schema::defaultStringLength(191);
         Schema::create('reviews', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('product_id')->unsigned()->index();
             $table->foreign('product_id')->references('id')->on('products')->OnDelete('cascade');
             $table->string('customer');
